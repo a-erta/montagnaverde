@@ -1,0 +1,47 @@
+it:
+  store:
+  index:
+  title_html: "Catalogo"
+  add_html: "Aggiungi al carrello"
+  title_main: "Negozio Online"
+  home: "Home"
+  questions: "Domande"
+  news: "Novità"
+  contact: "Contatti"
+  thanks: "Grazie!"
+  product_not_available: "Prodotto non disponibile"
+  availability: "Disponibilità"
+  
+  carts:
+  cart:
+  title: "Carrello"
+  empty: "Svuota carrello"
+  checkout: "Checkout"
+  
+  orders:
+  new:
+  legend: "Informazioni ordine"
+  form:
+  name: "Nome"
+  address_html: "Indirizzo"
+  email: "E-mail"
+  pay_type: "Paga con"
+  pay_prompt_html: "Selezione metodo di pagamento"
+  submit: "Acquista"
+  
+  activerecord:
+    models:
+      order: "Ordine"
+    attributes:
+      order:
+        address: "Indirizzo:"
+        name: "Nome:"
+        email: "E-mail:"
+        pay_type: "Paga con:"
+    
+    errors:
+      template:
+        header: "canide"
+      messages:
+        inclusion: "non è incluso nella lista"
+        blank: "non può essere lasciato bianco"

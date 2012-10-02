@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  image_url: MyString
+  price: 9.99
+  quantity: 10
+
+two:
+  title: MyString
+  description: MyText
+  image_url: MyString
+  price: 9.99
+  quantity: 10
+  
+miele_acacia:
+  title: Miele di Acacia
+  description: Il miglior miele della Lunigiana
+  price: 9.0
+  image_url: http://www.matrimonio.com/emp/fotos/5/7/3/5/miele%20e%20farina.jpg
+  quantity: 10
