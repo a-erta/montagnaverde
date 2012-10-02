@@ -7,7 +7,7 @@ gem 'rails', '3.2.6'
 
 # gem 'sqlite3'
 gem 'pg'
-# gem 'taps'
+gem 'taps'
 
 gem 'json'
 
