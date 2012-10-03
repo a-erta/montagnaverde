@@ -239,7 +239,7 @@ a:hover {
 .span3 {
   padding: 1em 2em;
   width: 13em;
-  background: #141;
+  background: #eef9f1;
 }
 
 .span2 {
@@ -2635,8 +2635,8 @@ button.close {
 .btn:hover {
   color: #333333;
   text-decoration: none;
-  background-color: #05702A;
-  *background-color: #05702A;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
   /* Buttons in IE7 don't get borders, so darken on hover */
 
   background-position: 0 -15px;

@@ -1,15 +1,20 @@
 <div class="span5" >
-<%= image_tag(product.image_url) %>
+<%= image_tag(product.image_url, :class => 'img-rounded') %>
 <h3> <%= product.title %> </h3>
-<%= sanitize(product.description) %>
-<div class="price_line" >
-<span class="price" > <%= number_to_currency(product.price, :unit => "€") %> </span>
-<span class="quantity"><%= t(:availabiity) %>: <%= product.quantity %> </span>
+<dl>
+		<dd>
+				<%= sanitize(product.description) %>
+		<dd>
+		<dd>
+				<%= number_to_currency(product.price, :unit => "€") %>
+				<%= t(:availabiity) %>: <%= product.quantity %>
+		</dd>
+</dl>
 <% if product.quantity && product.quantity != 0 %>
-   <%= button_to t(:add_html), line_items_path(:product_id => product), :remote => true %>
+   <%= button_to t(:add_html), line_items_path(:product_id => product), :remote => true, :class => 'btn btn-mini' %>
 <% else %>
    <%= t(:product_not_available) %>
 <% end %>
-</div>
+
 <p><a class="btn" href="#">View details &raquo;</a></p>
 </div>

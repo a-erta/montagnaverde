@@ -1,16 +1,21 @@
 <% unless cart.line_items.empty? %>
-<div class="cart_title" ><%= t(:title) %></div>
+<legend><%= t(:title) %></legend>
 <table>
 
 <%= render(cart.line_items) %>
 
-<tr class="total_line" >
+<tr>
 <td colspan="2" >Total</td>
-<td class="total_cell" ><%= number_to_currency(cart.total_price, :unit => "€") %></td>
+<td><%= number_to_currency(cart.total_price, :unit => "€") %></td>
+</tr>
+<tr>
+<td>
+<%= button_to t(:checkout), new_order_path, :class => 'btn btn-mini', :method => :get %>
+</td>
+<td>
+<%= button_to t(:empty), cart, :class => 'btn btn-mini', :method => :delete,
+:data => { :confirm => 'Are you sure?' } %>
+</td>
 </tr>
 </table>
-
-<%= button_to t(:checkout), new_order_path, :method => :get %>
-<%= button_to t(:empty), cart, :method => :delete,
-:data => { :confirm => 'Are you sure?' } %>
 <% end %>
