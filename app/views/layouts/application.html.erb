@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <%= stylesheet_link_tag  "bootstrap", "bootstrap-responsive" %>
+    <%= stylesheet_link_tag "bootstrap", "bootstrap-responsive" %>
   		<%= javascript_include_tag "application", "jquery",
   		"bootstrap-transition", "backbone", "bootstrap-alert",
   		"bootstrap-alert", "bootstrap-modal", "bootstrap-dropdown",
@@ -100,6 +100,7 @@
 											<% end %>
           </div><!--/.well -->
         </div><!--/span-->
+       <% if @products %>
         <div class="span9">
           <div class="hero-unit">
             <div id="myCarousel" class="carousel slide">
@@ -129,6 +130,7 @@
             <%= yield %>
           </div><!--/row-->
         </div><!--/span-->
+       <% end %>
       </div><!--/row-->
 
       <hr>
