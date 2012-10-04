@@ -48,8 +48,8 @@ $(function(){
   
         render: function(){
             var product = this.model.toJSON();
-            //Template stuff goes here
-            $(this.el).html(ich.product_template(product));
+            Template stuff goes here
+           	$(this.el).html(ich.product_template(product));
             return this;
         }
     });

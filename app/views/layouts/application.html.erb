@@ -105,8 +105,19 @@
             <div id="myCarousel" class="carousel slide">
   												<!-- Carousel items -->
   												<div class="carousel-inner">
-  												<%= @products.each do |f| %>
-    												<div class="item"><%= image_tag(f.image_url, :class => 'img-rounded') %> </div>
+  												<% @products.each_with_index do |f, i| %>
+  														<% if i == 0 %>
+    															<div class="item active">
+    													<% else %>
+    															<div class="item">
+    													<% end %>
+    															<%= image_tag(f.image_url, :class => 'img-rounded', 
+    																															:width => '870', :height => '480') %>
+    															<div class="carousel-caption">
+                      <h4><%= f.title %></h4>
+                      <p><%= sanitize(f.description) %></p>
+                    </div>
+    												 </div>
     										<% end %>
   												</div>
   												<!-- Carousel nav -->
