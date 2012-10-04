@@ -100,9 +100,9 @@
 											<% end %>
           </div><!--/.well -->
         </div><!--/span-->
-       <% if @products %>
         <div class="span9">
-          <div class="hero-unit">
+          <% if @products %>
+          <div class="hero-unit">         
             <div id="myCarousel" class="carousel slide">
   												<!-- Carousel items -->
   												<div class="carousel-inner">
@@ -126,11 +126,11 @@
   												<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 												</div>
           </div>
+          <% end %>
           <div class="row-fluid">
             <%= yield %>
           </div><!--/row-->
         </div><!--/span-->
-       <% end %>
       </div><!--/row-->
 
       <hr>
