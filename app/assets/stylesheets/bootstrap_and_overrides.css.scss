@@ -1,0 +1,38 @@
+@import "bootstrap";
+
+body { padding-top: 60px; }
+.navbar .nav {
+  margin: 20px 10px 0 0;
+}
+
+.navbar-inner {
+  background-color: #eef9f1;
+  background-image: -moz-linear-gradient(top, #eef9f1, #eef9f1);
+  background-image: -ms-linear-gradient(top, #eef9f1, #eef9f1);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eef9f1), to(#eef9f1));
+  background-image: -webkit-linear-gradient(top, #eef9f1, #eef9f1);
+  background-image: -o-linear-gradient(top, #eef9f1, #eef9f1);
+  background-image: linear-gradient(top, #eef9f1, #eef9f1);
+}
+
+.navbar-inverse .navbar-inner {
+  background-color: #eaf8ee;
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+}
+
+.span3 {
+  background: #eef9f1;
+}
+
+.btn:hover {
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+
+.navbar .nav {
+  margin: 12px 10px 0px 20px;
+}
+
+@import "bootstrap-responsive";
