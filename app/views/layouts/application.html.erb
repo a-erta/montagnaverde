@@ -9,14 +9,9 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <%= stylesheet_link_tag "bootstrap", "bootstrap-responsive" %>
-  		<%= javascript_include_tag "application", "jquery",
-  		"bootstrap-transition", "backbone", "bootstrap-alert",
-  		"bootstrap-alert", "bootstrap-modal", "bootstrap-dropdown",
-  		"bootstrap-scrollspy", "bootstrap-tab", "bootstrap-tooltip",
-  		"bootstrap-popover", "bootstrap-button", "bootstrap-collapse",
-  		"bootstrap-carousel", "bootstrap-typeahead" %>
-  		<%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+  	<%= csrf_meta_tags %>
     <style type="text/css">
       body {
         padding-top: 100px;
@@ -140,5 +135,6 @@
       </footer>
 
     </div><!--/.fluid-container-->
+  </div>
   </body>
 </html>
