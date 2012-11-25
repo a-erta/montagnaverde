@@ -53,11 +53,16 @@
               <%= link_to( "ITA", '/it', :class => "navbar-link" ) %>
               <div class="btn-group pull-right">
                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="icon-user"></i> Username
+                    <i class="icon-user"></i>
+                        <% if session[:user_id] != nil %>
+                            <%= User.find(session[:user_id]).name %>
+                        <% else %>
+                            Please Log In
+                        <% end %>
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Profile</a></li>
+                    <li><%= link_to( "Login", admin_path, :class => "navbar-link" ) %></li>
                     <li class="divider"></li>
                     <li><a href="#">Sign Out</a></li>
                 </ul>
@@ -81,7 +86,9 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <%= render @cart %>
+              <% if @cart %>
+                <%= render @cart %>
+              <% end %>
             </ul>
             <% if session[:user_id] %>
 		  										<ul>
