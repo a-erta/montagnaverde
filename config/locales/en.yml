@@ -14,6 +14,10 @@ en:
   thanks: "Thank you for your order"
   product_not_available: "Products not available"
   availability: "Availability"
+  philosophy: "Philosophy"
+  products: "Products"
+  companybios: "Bio Companies"
+  agriturismbio: "Agritourism"
   
   carts:
   cart:

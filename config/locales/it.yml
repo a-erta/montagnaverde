@@ -11,6 +11,10 @@ it:
   thanks: "Grazie!"
   product_not_available: "Prodotto non disponibile"
   availability: "Disponibilità"
+  philosophy: "Filosofia"
+  products: "Prodotti"
+  companybios: "Aziende Bio"
+  agriturismbio: "Agriturismo"
   
   carts:
   cart:

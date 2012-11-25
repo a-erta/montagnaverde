@@ -14,11 +14,11 @@
 		</dl>
 	</td>
 	<td class="list_actions" >
-		<%= button_to 'Show', product %><br />
-		<%= button_to 'Edit', edit_product_path(product) %><br />
+		<%= button_to 'Show', product, :method => :get, :class => 'btn btn-mini' %><br />
+		<%= button_to 'Edit', edit_product_path(product), :method => :get, :class => 'btn btn-mini' %><br />
 		<%= button_to 'Destroy', product,
 		:data => { :confirm => 'Are you sure?' },
-		:method => :delete %>
+		:method => :delete, :class => 'btn btn-mini' %>
 	</td>
 </tr>
 <% end %>

@@ -41,7 +41,7 @@ class OrdersController < ApplicationController
       end
     else
        Cart.destroy(session[:cart_id])
-	   session[:cart_id] = nil
+	      session[:cart_id] = nil
        redirect_to store_url, :notice => t(:product_not_available)
     end
   end
@@ -57,7 +57,7 @@ class OrdersController < ApplicationController
     @cart = current_cart
     if @cart.products_available == true
       @order = Order.new(params[:order])
-	  @order.add_line_items_from_cart(current_cart)
+	    @order.add_line_items_from_cart(current_cart)
 	  
       respond_to do |format|
         if @order.save
@@ -77,7 +77,7 @@ class OrdersController < ApplicationController
       end
     else
       Cart.destroy(session[:cart_id])
-	  session[:cart_id] = nil
+	    session[:cart_id] = nil
       redirect_to store_url, :notice => t(:product_not_available)
     end
   end
