@@ -70,8 +70,9 @@
             </p>
             <br><br>
             <ul class="nav">
-              <li class="<%= 'active' if current_page?("/") %>"><%= link_to t(:home), store_path %></li>
-              <li class="<%= 'active' if current_page?(store_path) %>"><%= link_to t(:products), store_path %></li>
+              <li class="<%= 'active' if current_page?(store_path) %>"><%= link_to t(:home), store_path %></li>
+              <li class="<%= 'active' if current_page?(store_path) %>"><%= link_to t(:philosophy), store_path %></li>
+              <li class="<%= 'active' if current_page?(vetrina_products_index_path) %>"><%= link_to t(:products), vetrina_products_index_path %></li>
               <li class="<%= 'active' if current_page?(store_path) %>"><%= link_to t(:companybios), store_path %></li>
               <li class="<%= 'active' if current_page?(store_path) %>"><%= link_to t(:agriturismbio), store_path %></li>
               <li class="<%= 'active' if current_page?(store_path) %>"><%= link_to t(:contact), store_path %></li>
@@ -91,13 +92,15 @@
               <% end %>
             </ul>
             <% if session[:user_id] %>
-		  										<ul>
-		    										<li><%= link_to 'Orders', orders_path %></li>
-		   										 <li><%= link_to 'Products', products_path %></li>
-		    										<li><%= link_to 'Users', users_path %></li>
-		  										</ul>
-		  										<%= button_to 'Logout', logout_path, :method => :delete, :class => 'btn btn-mini' %>
-											<% end %>
+		        <ul>
+		    	    <li><%= link_to 'Orders', orders_path %></li>
+		   			<li><%= link_to 'Products', products_path %></li>
+		    	    <li><%= link_to 'Users', users_path %></li>
+                    <li><%= link_to 'Product Categories', productcategories_path %></li>
+                    <li><%= link_to 'Prices', prices_path %></li>
+		  		</ul>
+		  		<%= button_to 'Logout', logout_path, :method => :delete, :class => 'btn btn-mini' %>
+			<% end %>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">

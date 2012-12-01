@@ -16,6 +16,8 @@
   <%= f.input :image_url, :label => t(:image_url) %>
   <%= f.input :price, :label => t(:price) %>
   <%= f.input :quantity, :label => t(:quantity) %>
+  <%= f.input :home, :label => "To Home", :collection => [1, 0]  %>
+  <%= f.input :category_id, :label => "Category", :collection => Productcategory.all.map { |c| [c.name] } %>
   <%= f.button :submit, :label => t(:submit) %>
 
 <% end %>

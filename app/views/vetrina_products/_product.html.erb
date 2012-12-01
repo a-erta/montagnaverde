@@ -1,0 +1,26 @@
+<h1> Dai cazzo </h1>
+<%
+   products = Product.all;
+   products.each do |product|
+%>
+<div class="span3" >
+<%= image_tag(product.image_url, :class => 'img-rounded') %>
+<h4> <%= product.title %> </h4>
+<dl>
+		<dd>
+				<%= sanitize(product.description) %>
+		<dd>
+		<dd>
+				<%= number_to_currency(product.price, :unit => "€") %>
+				<%= t(:availabiity) %>: <%= product.quantity %>
+		</dd>
+</dl>
+<% if product.quantity && product.quantity != 0 %>
+   <%= button_to t(:add_html), line_items_path(:product_id => product), :remote => true, :class => 'btn btn-mini' %>
+<% else %>
+   <%= t(:product_not_available) %>
+<% end %>
+
+<p><a class="btn" href="#">View details &raquo;</a></p>
+</div>
+<% end %>

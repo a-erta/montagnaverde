@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120616131829) do
+ActiveRecord::Schema.define(:version => 20121201174007) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20120616131829) do
   end
 
   create_table "line_items", :force => true do |t|
-    t.integer  "product_id"
+    t.integer  "price_id"
     t.integer  "cart_id"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
@@ -36,6 +36,22 @@ ActiveRecord::Schema.define(:version => 20120616131829) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "prices", :force => true do |t|
+    t.integer  "product_id"
+    t.decimal  "price",      :precision => 8, :scale => 2
+    t.decimal  "quantity"
+    t.string   "measure"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+  end
+
+  create_table "productcategories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "products", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -44,6 +60,8 @@ ActiveRecord::Schema.define(:version => 20120616131829) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "quantity"
+    t.integer  "home"
+    t.string   "category_id"
   end
 
   create_table "users", :force => true do |t|

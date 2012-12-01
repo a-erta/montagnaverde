@@ -2,12 +2,12 @@ class Cart < ActiveRecord::Base
   # attr_accessible :title, :body
   has_many :line_items, :dependent => :destroy
   
-  def add_product(product_id)
-	current_item = line_items.find_by_product_id(product_id)
+  def add_product(price_id)
+	current_item = line_items.find_by_price_id(price_id)
 	if current_item
 		current_item.quantity += 1
 	else
-		current_item = line_items.build(:product_id => product_id)
+		current_item = line_items.build(:price_id => price_id)
 	end
 	current_item
   end
@@ -18,7 +18,7 @@ class Cart < ActiveRecord::Base
   
   def products_available
     line_items.each do |item|
-      if item.product.quantity <= item.quantity
+      if item.price.product.quantity <= item.quantity
           return false
       end
 	end
@@ -27,7 +27,7 @@ class Cart < ActiveRecord::Base
   
   def products_update
     line_items.each do |item|
-      item.product.update_attributes(:quantity => item.product.quantity -= item.quantity )
+      item.price.product.update_attributes(:quantity => item.product.quantity -= item.quantity )
     end
   end
   

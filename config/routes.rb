@@ -1,5 +1,11 @@
 Depot::Application.routes.draw do
 
+  resources :prices
+
+  get "vetrina_products/index"
+
+  resources :productcategories
+
   get 'admin' => 'admin#index'
   
   controller :sessions do
