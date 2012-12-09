@@ -44,4 +44,6 @@ gem 'will_paginate', '~> 3.0'
 
 gem 'bootstrap-sass'
 
-gem 'simple_form'
+gem 'simple_form', '~> 2.0.4'
+
+gem 'yaml_db'
