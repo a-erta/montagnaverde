@@ -1,0 +1,255 @@
+
+---
+carts:
+  columns:
+  - id
+  - created_at
+  - updated_at
+  records: 
+  - - '3'
+    - '2012-06-10 19:25:52.373175'
+    - '2012-06-10 19:25:52.373175'
+  - - '35'
+    - '2012-06-15 14:23:37.176102'
+    - '2012-06-15 14:23:37.176102'
+  - - '36'
+    - '2012-06-15 14:23:59.938896'
+    - '2012-06-15 14:23:59.938896'
+  - - '54'
+    - '2012-06-17 16:43:42.657147'
+    - '2012-06-17 16:43:42.657147'
+  - - '57'
+    - '2012-06-17 17:20:02.053338'
+    - '2012-06-17 17:20:02.053338'
+  - - '103'
+    - '2012-07-15 20:01:31.328864'
+    - '2012-07-15 20:01:31.328864'
+  - - '105'
+    - '2012-10-01 23:16:05.248397'
+    - '2012-10-01 23:16:05.248397'
+  - - '115'
+    - '2012-10-04 10:11:01.265977'
+    - '2012-10-04 10:11:01.265977'
+  - - '143'
+    - '2012-10-27 20:15:37.099933'
+    - '2012-10-27 20:15:37.099933'
+  - - '149'
+    - '2012-12-01 15:21:57.164698'
+    - '2012-12-01 15:21:57.164698'
+  - - '151'
+    - '2012-12-01 18:13:55.041306'
+    - '2012-12-01 18:13:55.041306'
+
+---
+line_items:
+  columns:
+  - id
+  - price_id
+  - cart_id
+  - created_at
+  - updated_at
+  - quantity
+  - order_id
+  records: 
+  - - '8'
+    - '1'
+    - '3'
+    - '2012-06-10 19:25:52.380189'
+    - '2012-06-10 19:25:52.380189'
+    - '1'
+    - !!null 
+  - - '98'
+    - '3'
+    - !!null 
+    - '2012-06-17 16:31:23.844649'
+    - '2012-06-17 16:31:47.943014'
+    - '1'
+    - '22'
+  - - '101'
+    - '3'
+    - !!null 
+    - '2012-06-17 17:12:31.401118'
+    - '2012-06-17 17:18:14.083123'
+    - '1'
+    - '24'
+  - - '154'
+    - '8'
+    - '105'
+    - '2012-10-01 23:16:16.900158'
+    - '2012-10-01 23:30:15.125772'
+    - '2'
+    - !!null 
+  - - '201'
+    - '1'
+    - !!null 
+    - '2012-10-27 20:44:45.028167'
+    - '2012-10-28 12:45:11.064897'
+    - '1'
+    - '28'
+  - - '202'
+    - '8'
+    - !!null 
+    - '2012-10-28 12:36:45.335175'
+    - '2012-10-28 12:45:11.066632'
+    - '1'
+    - '28'
+
+---
+orders:
+  columns:
+  - id
+  - name
+  - address
+  - email
+  - pay_type
+  - created_at
+  - updated_at
+  records: 
+  - - '22'
+    - Alessandro
+    - a
+    - alessandro.erta@gmail.com
+    - Credit card
+    - '2012-06-17 16:31:47.941439'
+    - '2012-06-17 16:31:47.941439'
+  - - '24'
+    - Alessandro
+    - a
+    - alessandro.erta@gmail.com
+    - Credit card
+    - '2012-06-17 17:18:14.081271'
+    - '2012-06-17 17:18:14.081271'
+  - - '28'
+    - Alessandro
+    - cazzo
+    - alessandro.erta@gmail.com
+    - Check
+    - '2012-10-28 12:45:11.026333'
+    - '2012-10-28 12:45:11.026333'
+
+---
+users:
+  columns:
+  - id
+  - name
+  - password_digest
+  - created_at
+  - updated_at
+  records: 
+  - - '2'
+    - alessandro
+    - $2a$10$mNbAFgrRvIjRmIcTW7qepe9oHQC1kCkrcOK7HkrNKtl58C92Gl/yi
+    - '2012-06-15 14:59:03.663207'
+    - '2012-06-15 14:59:03.663207'
+  - - '3'
+    - barbara
+    - $2a$10$RFEpUINW0MeIg0l/mpL4qey50ir5Jltku8PSs7ATt1U5J6Y9C4VWS
+    - '2012-10-21 16:26:45.951599'
+    - '2012-10-21 16:26:45.951599'
+
+---
+productcategories:
+  columns:
+  - id
+  - name
+  - description
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - Miele
+    - Categoria Miele
+    - '2012-11-26 21:16:39.343842'
+    - '2012-11-26 21:16:39.343842'
+  - - '2'
+    - Farina
+    - Categoria Farina
+    - '2012-11-26 21:16:59.021868'
+    - '2012-11-26 21:16:59.021868'
+  - - '3'
+    - Pacchetti Regalo
+    - Pacchetti regalo
+    - '2012-11-28 22:04:00.417544'
+    - '2012-11-28 22:04:00.417544'
+
+---
+prices:
+  columns:
+  - id
+  - product_id
+  - price
+  - quantity
+  - measure
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - '1'
+    - '11.00'
+    - '1.0'
+    - Kg
+    - '2012-12-01 16:55:09.511206'
+    - '2012-12-01 16:55:09.511206'
+  - - '2'
+    - '1'
+    - '6.00'
+    - '0.5'
+    - Kg
+    - '2012-12-01 16:55:35.366543'
+    - '2012-12-01 16:55:35.366543'
+
+---
+products:
+  columns:
+  - id
+  - title
+  - description
+  - image_url
+  - price
+  - created_at
+  - updated_at
+  - quantity
+  - home
+  - category_id
+  records: 
+  - - '1'
+    - Miele Castagno
+    - <p>Il miele di acacia più buono della Lunigiana , biologico </p>
+    - http://www.azzurro-prodottitipici.it/wp-content/uploads/2012/05/Il-Pungiglione-Miele-Della-Lunigiana-DOP-Castagno-290x290.jpg
+    - '7'
+    - '2012-06-09 17:24:33.271427'
+    - '2012-11-28 22:05:08.638669'
+    - '49'
+    - '1'
+    - Miele
+  - - '3'
+    - Miele di acacia
+    - ! "<p>\r\nMiele di acacia della Lunigiana che succhaia la minchia\r\n</p>"
+    - http://www.azzurro-prodottitipici.it/wp-content/uploads/2012/05/Il-Pungiglione-Miele-Della-Lunigiana-DOP-Acacia-290x290.jpg
+    - '7'
+    - '2012-06-09 17:32:55.834426'
+    - '2012-11-28 22:11:22.756465'
+    - '99'
+    - '1'
+    - Miele
+  - - '4'
+    - Farina di Castagne della Lunigiana DOP
+    - <p>La pregiata e genuina farina di castagnaccio più dolce d'europa ma che dico
+      d'europa del mondo</p>
+    - http://agronotizie.imagelinenetwork.com/materiali/ArticoliImg/farina-di-castagne-della-lunigiana-dop.jpg
+    - '6.5'
+    - '2012-06-10 19:31:30.777326'
+    - '2012-12-01 15:18:51.995039'
+    - '9'
+    - '0'
+    - Farina
+  - - '8'
+    - Bomboniere bios
+    - <p>Le nostre idee per un evento speciale</p>
+    - http://www.lucianopignataro.it/wp-content/uploads/2012/04/a-fine-cerimonia-le-bomboniere-e1334476846607.jpg
+    - '10'
+    - '2012-07-02 08:55:11.311097'
+    - '2012-12-01 17:44:45.057106'
+    - '98'
+    - '1'
+    - Pacchetti Regalo

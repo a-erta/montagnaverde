@@ -1,0 +1,2 @@
+module AgritourismHelper
+end

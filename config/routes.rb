@@ -1,5 +1,13 @@
 Depot::Application.routes.draw do
 
+  get "bio_company/index"
+
+  get "contact/index"
+
+  get "agritourism/index"
+
+  get "philosophy/index"
+
   resources :prices
 
   get "vetrina_products/index"

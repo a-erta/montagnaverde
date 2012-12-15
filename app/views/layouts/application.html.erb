@@ -71,11 +71,11 @@
             <br><br>
             <ul class="nav">
               <li class="<%= 'active' if current_page?(store_path) %>"><%= link_to t(:home), store_path %></li>
-              <li class="<%= 'active' if current_page?(store_path) %>"><%= link_to t(:philosophy), store_path %></li>
+              <li class="<%= 'active' if current_page?(philosophy_index_path) %>"><%= link_to t(:philosophy), philosophy_index_path %></li>
               <li class="<%= 'active' if current_page?(vetrina_products_index_path) %>"><%= link_to t(:products), vetrina_products_index_path %></li>
-              <li class="<%= 'active' if current_page?(store_path) %>"><%= link_to t(:companybios), store_path %></li>
-              <li class="<%= 'active' if current_page?(store_path) %>"><%= link_to t(:agriturismbio), store_path %></li>
-              <li class="<%= 'active' if current_page?(store_path) %>"><%= link_to t(:contact), store_path %></li>
+              <li class="<%= 'active' if current_page?(bio_company_index_path) %>"><%= link_to t(:companybios), bio_company_index_path %></li>
+              <li class="<%= 'active' if current_page?(agritourism_index_path) %>"><%= link_to t(:agriturismbio), agritourism_index_path %></li>
+              <li class="<%= 'active' if current_page?(contact_index_path) %>"><%= link_to t(:contact), contact_index_path %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

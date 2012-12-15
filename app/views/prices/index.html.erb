@@ -13,7 +13,7 @@
 
 <% @prices.each do |price| %>
   <tr>
-    <td><%= price.product_id %></td>
+    <td><%= price.product.title %></td>
     <td><%= price.price %></td>
     <td><%= price.quantity %></td>
     <td><%= price.measure %></td>

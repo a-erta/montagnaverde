@@ -16,7 +16,7 @@
             <div class="tab-pane" id="tab<%= i %>">
         <% end %>
         <%
-           products = Product.all;
+           products = Product.all
            products.each do |product|
 
            if product.category_id == f.name
@@ -28,18 +28,20 @@
               <dl>
                 <dd>
                   <%= sanitize(product.description) %>
+                </dd>
                 <dd>
-                <dd>
-                  <%= number_to_currency(product.price, :unit => "€") %>
-                  <%= t(:availabiity) %>: <%= product.quantity %>
+                  <% product.prices.each do |p|  %>
+                      <%= p.quantity %>
+                      <%= p.measure %>
+                      <%= number_to_currency(p.price, :unit => "€") %>
+                      <% if product.quantity && product.quantity != 0 %>
+                          <%= button_to t(:add_html), line_items_path(:price_id => p), :remote => true, :class => 'btn btn-mini' %>
+                      <% else %>
+                          <%= t(:product_not_available) %>
+                      <% end %>
+                  <% end %>
                 </dd>
               </dl>
-              <% if product.quantity && product.quantity != 0 %>
-                  <%= button_to t(:add_html), line_items_path(:product_id => product), :remote => true, :class => 'btn btn-mini' %>
-              <% else %>
-                  <%= t(:product_not_available) %>
-              <% end %>
-
               <p><a class="btn" href="#">View details &raquo;</a></p>
             </div>
                 <% end %>
