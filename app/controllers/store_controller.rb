@@ -7,6 +7,7 @@ class StoreController < ApplicationController
     else
       @products = Product.order(:title)
       @cart = current_cart
+      @home_pictures = HomePicture.all
     end
   end
 end

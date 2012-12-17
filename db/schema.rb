@@ -11,11 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121209175132) do
+ActiveRecord::Schema.define(:version => 20121216105843) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "home_pictures", :force => true do |t|
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   create_table "line_items", :force => true do |t|
@@ -56,12 +65,12 @@ ActiveRecord::Schema.define(:version => 20121209175132) do
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.decimal  "price",       :precision => 8, :scale => 2
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.decimal  "price"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "quantity"
-    t.string   "category_id"
     t.integer  "home"
+    t.string   "category_id"
   end
 
   create_table "users", :force => true do |t|

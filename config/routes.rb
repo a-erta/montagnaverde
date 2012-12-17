@@ -1,5 +1,7 @@
 Depot::Application.routes.draw do
 
+  resources :home_pictures
+
   get "bio_company/index"
 
   get "contact/index"

@@ -1,0 +1,19 @@
+<h1>Listing home_pictures</h1>
+<table>
+  <% @home_pictures.each do |home_picture| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
+        <td>
+          <%= image_tag(home_picture.attachment.url(:thumb), :class => 'list_image') %>
+        </td>
+        <td class="list_actions" >
+          <%= button_to 'Show', home_picture, :method => :get, :class => 'btn btn-mini' %><br />
+          <%= button_to 'Edit', edit_home_picture_path(home_picture), :method => :get, :class => 'btn btn-mini' %><br />
+          <%= button_to 'Destroy', home_picture,
+                        :data => { :confirm => 'Are you sure?' },
+                        :method => :delete, :class => 'btn btn-mini' %>
+        </td>
+      </tr>
+  <% end %>
+</table>
+<br />
+<%= link_to 'New Picture', new_home_picture_path %>
