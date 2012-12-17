@@ -65,12 +65,12 @@ ActiveRecord::Schema.define(:version => 20121216105843) do
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.decimal  "price"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.decimal  "price",       :precision => 8, :scale => 2
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.integer  "quantity"
-    t.integer  "home"
     t.string   "category_id"
+    t.integer  "home"
   end
 
   create_table "users", :force => true do |t|
