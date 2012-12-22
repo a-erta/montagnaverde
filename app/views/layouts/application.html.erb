@@ -62,9 +62,9 @@
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><%= link_to( "Login", admin_path, :class => "navbar-link" ) %></li>
-                    <li class="divider"></li>
-                    <li><a href="#signOut" role="button" class="navbar-link" data-toggle="modal">Log Out</a></li>
+                  <li><a href="#signIn" role="button" class="navbar-link" data-toggle="modal">Log In</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#signOut" role="button" class="navbar-link" data-toggle="modal">Log Out</a></li>
                 </ul>
                </div>
             </p>
@@ -145,20 +145,49 @@
     </div><!--/.fluid-container-->
   </div>
     <% if session[:user_id] != nil && User.exists?(session[:user_id]) %>
-    <!-- Modal -->
-    <div id="signOut" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel"><%= User.find(session[:user_id]).name %></h3>
-      </div>
-      <div class="modal-body">
-        <p>Are you sure to log out?</p>
-      </div>
-      <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <%= button_to 'Logout', logout_path, :method => :delete, :class => "btn btn-primary" %>
-      </div>
-    </div>
+        <!-- Modal -->
+        <div id="signOut" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel"><%= User.find(session[:user_id]).name %></h3>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure to log out?</p>
+          </div>
+          <div class="modal-footer">
+            <%= form_tag('/logout', :method => :delete) do %>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                <%= button_tag 'Logout', :class => "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+    <% else %>
+          <!-- Modal -->
+          <div id="signIn" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="mySignInLabel">Please Log In</h3>
+            </div>
+            <div class="modal-body">
+                <% if flash[:alert] %>
+                    <p id="notice" ><%= flash[:alert] %></p>
+                <% end %>
+                <%= form_tag('/login') do %>
+                    <fieldset>
+                      <div>
+                        <label for="name" >Name:</label>
+                        <%= text_field_tag :name, params[:name] %>
+                      </div>
+                      <div>
+                        <label for="password" >Password:</label>
+                        <%= password_field_tag :password, params[:password] %>
+                      </div>
+                      <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                      <%= button_tag 'Login', :class => "btn btn-primary" %>
+                    </fieldset>
+              <% end %>
+            </div>
+          </div>
     <% end %>
   </body>
 </html>
