@@ -1,4 +1,4 @@
-<%= simple_form_for(@product, :html => {:class => 'form-horizontal' }) do |f| %>
+<%= simple_form_for(@product, :html => { :multipart => true, :class => 'form-horizontal' }) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -10,14 +10,18 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-inputs">
+      <%= f.input :title, :label => t(:title) %>
+      <%= f.input :description, :label => t(:description), :rows => 6 %>
+      <%= f.input :price, :label => t(:price) %>
+      <%= f.input :quantity, :label => t(:quantity) %>
+      <%= f.input :home, :label => "To Home", :collection => [1, 0]  %>
+      <%= f.input :category_id, :label => "Category", :collection => Productcategory.all.map { |c| [c.name] } %>
 
-  <%= f.input :title, :label => t(:title) %>
-  <%= f.input :description, :label => t(:description), :rows => 6 %>
-  <%= f.input :image_url, :label => t(:image_url) %>
-  <%= f.input :price, :label => t(:price) %>
-  <%= f.input :quantity, :label => t(:quantity) %>
-  <%= f.input :home, :label => "To Home", :collection => [1, 0]  %>
-  <%= f.input :category_id, :label => "Category", :collection => Productcategory.all.map { |c| [c.name] } %>
-  <%= f.button :submit, :label => t(:submit) %>
+      <%= f.file_field :image %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, :label => t(:submit) %>
+  </div>
 
 <% end %>

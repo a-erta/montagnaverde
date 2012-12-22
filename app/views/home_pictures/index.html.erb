@@ -2,8 +2,13 @@
 <table>
   <% @home_pictures.each do |home_picture| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
-        <td>
-          <%= image_tag(home_picture.attachment.url(:thumb), :class => 'list_image') %>
+        <td class="list_description">
+          <dl>
+            <dt><%= home_picture.title %></dt>
+            <dd><%= image_tag(home_picture.attachment.url(:thumb), :class => 'list_image') %></dd>
+            <dd><%= truncate(strip_tags(home_picture.description),
+                           :length => 80) %></dd>
+          </dl>
         </td>
         <td class="list_actions" >
           <%= button_to 'Show', home_picture, :method => :get, :class => 'btn btn-mini' %><br />

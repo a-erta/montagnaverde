@@ -1,11 +1,8 @@
 <% if product.home == 1 %>
 <div class="span3" >
-<%= image_tag(product.image_url, :class => 'img-rounded') %>
+<%= image_tag product.image.url(:medium), :class => 'img-rounded' %>
 <h4> <%= product.title %> </h4>
 <dl>
-		<dd>
-				<%= sanitize(product.description) %>
-		<dd>
 		<dd>
 				<% product.prices.each do |p|  %>
                     <%= p.quantity %>
@@ -21,6 +18,23 @@
 		</dd>
 </dl>
 
-<p><a class="btn" href="#">View details &raquo;</a></p>
+  <!-- Button to trigger modal -->
+  <a href="#<%= product.id %>" role="button" class="btn" data-toggle="modal">View details &raquo;</a>
+
+  <!-- Modal -->
+  <div id="<%= product.id %>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel"><%= product.title %></h3>
+    </div>
+    <div class="modal-body">
+      <%= image_tag product.image.url, :class => 'img-rounded' %>
+      <p><%= sanitize(product.description) %></p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+  </div>
+
 </div>
 <% end %>

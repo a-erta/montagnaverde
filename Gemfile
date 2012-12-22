@@ -44,6 +44,8 @@ gem 'will_paginate', '~> 3.0'
 
 gem 'bootstrap-sass'
 
+#gem 'twitter-bootstrap-rails', '2.1.1'
+
 gem 'simple_form', '~> 2.0.4'
 
 gem 'yaml_db'

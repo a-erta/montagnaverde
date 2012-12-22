@@ -1,7 +1,9 @@
 <%= simple_form_for(@home_picture, :url => home_pictures_path, :html => { :multipart => true }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+   <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description, :rows => 6 %>
     <%= f.file_field :attachment %>
   </div>
 

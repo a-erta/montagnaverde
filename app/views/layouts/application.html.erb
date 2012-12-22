@@ -64,7 +64,7 @@
                 <ul class="dropdown-menu">
                     <li><%= link_to( "Login", admin_path, :class => "navbar-link" ) %></li>
                     <li class="divider"></li>
-                    <li><a href="#">Sign Out</a></li>
+                    <li><a href="#signOut" role="button" class="navbar-link" data-toggle="modal">Log Out</a></li>
                 </ul>
                </div>
             </p>
@@ -100,7 +100,6 @@
                     <li><%= link_to 'Prices', prices_path %></li>
                     <li><%= link_to 'Home Pictures', home_pictures_path %></li>
 		  		</ul>
-		  		<%= button_to 'Logout', logout_path, :method => :delete, :class => 'btn btn-mini' %>
 			<% end %>
           </div><!--/.well -->
         </div><!--/span-->
@@ -117,11 +116,13 @@
     															<div class="item">
     													<% end %>
     															<%= image_tag(f.attachment.url, :class => 'img-rounded',
-    																															:width => '870', :height => '480') %>
+    																			:width => '870', :height => '480') %>
     															<div class="carousel-caption">
+                                                                  <h4><%= f.title %></h4>
+                                                                  <p><%= sanitize(f.description) %></p>
                                                                 </div>
     												 </div>
-    										<% end %>
+    										    <% end %>
   												</div>
   												<!-- Carousel nav -->
   												<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -143,5 +144,21 @@
 
     </div><!--/.fluid-container-->
   </div>
+    <% if session[:user_id] != nil && User.exists?(session[:user_id]) %>
+    <!-- Modal -->
+    <div id="signOut" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel"><%= User.find(session[:user_id]).name %></h3>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure to log out?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <%= button_to 'Logout', logout_path, :method => :delete, :class => "btn btn-primary" %>
+      </div>
+    </div>
+    <% end %>
   </body>
 </html>

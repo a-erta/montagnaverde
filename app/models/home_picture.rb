@@ -1,5 +1,5 @@
 class HomePicture < ActiveRecord::Base
-  attr_accessible :attachment
+  attr_accessible :attachment, :title, :description
   has_attached_file :attachment,
                     :url => "/assets/home_pic/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/home_pic/:id/:style/:basename.:extension",

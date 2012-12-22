@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<%= @home_picture.title %>
 <%= image_tag @home_picture.attachment.url(:medium) %>
+<%= @home_picture.description %>
 
 <%= link_to 'Edit', edit_home_picture_path(@home_picture) %> |
 <%= link_to 'Back', home_pictures_path %>

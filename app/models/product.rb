@@ -1,13 +1,13 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :image_url, :price, :title, :quantity, :category_id, :home
-  validates :title, :description, :image_url, :quantity, :category_id, :home, :presence => true
+  attr_accessible :description, :image, :price, :title, :quantity, :category_id, :home
+  validates :title, :description, :image, :quantity, :category_id, :home, :presence => true
   validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
   validates :quantity, :numericality => {:greater_than_or_equal_to => 0}  
   validates :title, :uniqueness => true
-  validates :image_url, :allow_blank => true, :format => {
-	:with => %r{\.(gif|jpg|png)$}i,
-	:message => 'must be a URL for GIF, JPG or PNG image.'
-  }
+  has_attached_file :image,
+                    :url => "/assets/product_img/:id/:style/:basename.:extension",
+                    :path => ":rails_root/public/assets/product_img/:id/:style/:basename.:extension",
+                    :styles => { :medium => "300x300>", :thumb => "100x100>" }
   
   has_many :line_items
   has_many :orders, :through => :line_items
